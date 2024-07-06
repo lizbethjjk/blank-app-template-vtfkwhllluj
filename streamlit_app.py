@@ -9,8 +9,5 @@ st.set_page_config(
     page_icon="🏢",
     layout="wide",
     initial_sidebar_state="expanded",
-    menu_items={
-        "Report a bug": "https://github.com/eeshawn11/HDB_Resale_Dashboard/issues",
-        "About": "Thanks for dropping by!"
-        }
+    
     )
