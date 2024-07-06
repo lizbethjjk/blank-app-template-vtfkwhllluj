@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-from shapely.geometry import Point, Polygon
-
+import fetch as f
 
 st.title("HDB Dataset")
 st.write(
