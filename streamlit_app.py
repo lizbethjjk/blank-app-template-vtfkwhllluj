@@ -12,16 +12,6 @@ st.set_page_config(
         }
     )
 
-with st.sidebar:
-    st.markdown(
-        """
-        Created by [**eeshawn**](https://eeshawn.com)
-
-        - Connect on [**LinkedIn**](https://www.linkedin.com/in/shawn-sing/)
-        - Project source [**code**](https://github.com/eeshawn11/HDB_Resale_Dashboard/)
-        - Check out my other projects on [**GitHub**](https://github.com/eeshawn11/)
-        """
-        )
 
 with st.container():
     st.title("Singapore HDB Resale Price from 2000")
@@ -46,24 +36,3 @@ with st.container():
         """
     )
 
-st.markdown("---")
-
-with st.container():
-    st.markdown("## Background")
-    st.markdown(
-        """
-        The [Housing & Development Board (HDB)](https://www.hdb.gov.sg/cs/infoweb/homepage) is Singapore's public housing authority, responsible for 
-        planning and developing affordable accommodation for residents in Singapore. First established in 1960, over 1 million flats have since been completed 
-        in 23 towns and 3 estates across the island.Aspiring homeowners generally have a few options when they wish to purchase their first home, either purchasing a new flat directly from HDB, or 
-        purchasing an existing flat from the resale market.
-        
-        While new flats have been constantly developed to meet the needs of the growing population, HDB has been operating on a Build To Order (BTO) 
-        since 2001. As the name suggests, the scheme allows the government to build based on actual demand, requiring new developments to meet 
-        a minimum application rate before a tender for construction is called. This generally requires a waiting period of around 3 - 4 years for completion.
-
-        However, 2 years of stoppages and disruptions during COVID caused delays to various projects, lengthening the wait time to around 5 years. This
-        caused many people to turn to the resale market instead. Since these are existing developments, resale transactions can usually be expected to 
-        complete within 6 months or so, which is a significant reduction in wait time. This surge in demand has also caused a sharp increase in resale prices,
-        with many flats even crossing the S$1 million mark.
-        """
-    )
