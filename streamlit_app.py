@@ -20,3 +20,38 @@ def load_data():
     hdb_coordinates = f.get_coords_df()
     geo_df = f.get_chloropeth()
     return df, hdb_coordinates, geo_df
+
+with st.spinner("Fetching data..."):
+    df, hdb_coordinates, geo_df = load_data()
+
+if "geo_df" not in st.session_state:
+        st.session_state.geo_df = geo_df
+
+if "df_raw" not in st.session_state:
+    st.session_state.df_raw = df.head(10).copy()
+
+@st.cache_data(show_spinner=False)
+def get_planning_areas():
+    planning_areas = []
+    polygons = []
+    for i in range(len(st.session_state.geo_df["features"])):
+        planning_areas.append(
+            st.session_state.geo_df["features"][i]["properties"]["PLN_AREA_N"]
+        )
+        try:
+            polygons.append(
+                Polygon(
+                    st.session_state.geo_df["features"][i]["geometry"]["coordinates"][0]
+                )
+            )
+        except:
+            polygons.append(
+                Polygon(
+                    st.session_state.geo_df["features"][i]["geometry"]["coordinates"][
+                        0
+                    ][0]
+                )
+            )
+    return planning_areas, polygons
+
+planning_areas, polygons = get_planning_areas()
